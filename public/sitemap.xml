@@ -2,18 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/jokes/</loc>
+    <loc>https://vickpalomo.github.io/bravo-site/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-04-14T00:00:00+00:00</lastmod>
+    <loc>https://vickpalomo.github.io/bravo-site/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://vickpalomo.github.io/bravo-site/interes/</loc>
   </url><url>
-    <loc>http://localhost:1313/weather/</loc>
-  </url><url>
-    <loc>http://localhost:1313/interes/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://vickpalomo.github.io/bravo-site/tags/</loc>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
 ---
 title: "Clima"
-draft: false
+draft: true
 ---

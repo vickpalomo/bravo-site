@@ -1,7 +1,8 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://vickpalomo.github.io/bravo-site/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Bravo Site'
 theme = "ananke"
+relativeURLs = true
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
