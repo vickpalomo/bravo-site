@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Interés Compuesto | Bravo Site</title>
+    <title>Clima | Bravo Site</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.146.4">
@@ -32,18 +32,18 @@
     
 
     
-      <link rel="canonical" href="http://localhost:1313/interes/">
+      <link rel="canonical" href="http://localhost:1313/weather/">
     
 
-    <meta property="og:url" content="http://localhost:1313/interes/">
+    <meta property="og:url" content="http://localhost:1313/weather/">
   <meta property="og:site_name" content="Bravo Site">
-  <meta property="og:title" content="Interés Compuesto">
+  <meta property="og:title" content="Clima">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
 
-  <meta itemprop="name" content="Interés Compuesto">
+  <meta itemprop="name" content="Clima">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Interés Compuesto">
+  <meta name="twitter:title" content="Clima">
 
 	
   </head><body class="ma0 avenir bg-near-white development">
@@ -71,7 +71,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Interés Compuesto
+          Clima
         </h1>
         
       </div>
@@ -82,63 +82,57 @@
     <main class="pb7" role="main">
       
 <main class="pa3 pa4-ns w-100 w-80-ns center">
-  <h1>Interés Compuesto</h1>
+  <h1>Clima</h1>
 
-  <form onsubmit="calcular(event)">
-    <label>Principal:
-      <input type="number" id="capital" value="1000" required>
-    </label><br>
-    <label>Tasa (% anual):
-      <input type="number" id="tasa" value="5" required>
-    </label><br>
-    <label>Periodos:
-      <input type="number" id="periodos" value="3" required>
-    </label><br><br>
-    <button type="submit">Calcular</button>
+  <form onsubmit="obtenerClima(event)">
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" placeholder="Ej. Mérida" required>
+    <button type="submit">Consultar clima</button>
   </form>
-  
-  <div id="resultado" style="margin-top: 20px;">Ingresa los datos y haz clic en "Calcular"</div>
+
+  <div id="resultado-clima" style="margin-top: 20px;">
+    Ingresa una ciudad para ver el clima.
+  </div>
 
   <script>
-    async function calcular(event) {
+    async function obtenerClima(event) {
       event.preventDefault();
-      
-      const capital = document.getElementById('capital').value;
-      const tasa = document.getElementById('tasa').value;
-      const periodos = document.getElementById('periodos').value;
 
-      const resultado = document.getElementById('resultado');
-      resultado.textContent = 'Calculando...';
+      const ciudad = document.getElementById('ciudad').value.trim();
+      const resultado = document.getElementById('resultado-clima');
+      resultado.textContent = "Consultando clima...";
 
       const apiKey = "42IuTguij6KMv7KTV8MppveAkF6HGAC024d7Z4nKvNkMdKC7jSF3Aas0AitMvcqC";
 
-      const url = "https://api-bravo.onrender.com/api/v1/interests/calcular-intereses";
-
-      
-      const data = {
-        principal: Number(capital),
-        tasa_anual: Number(tasa)/100,
-        periodos: Number(periodos)
-      };
-
       try {
-        const response = await fetch(url, {
-          method: "POST",
+        const response = await fetch(`https://api-bravo.onrender.com/api/v1/weather/${encodeURIComponent(ciudad)}`, {
+          method: 'GET',
           headers: {
-            "x-api-key": apiKey,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data) 
+            'x-api-key': apiKey,
+            'Content-Type': 'application/json'
+          }
         });
 
         if (!response.ok) {
-          throw new Error('No se pudo calcular el interes');
+          throw new Error(`No se pudo obtener el clima (${response.status})`);
         }
 
-        const result = await response.json();
-        resultado.innerHTML = `El interes es: ${result.monto_total }`;
-      } catch (err) {
-        resultado.textContent = 'Error: ' + err.message;
+        const data = await response.json();
+
+        const tempC = (data.main.temp - 273.15).toFixed(1);
+        const feelsLikeC = (data.main.feels_like - 273.15).toFixed(1);
+
+        resultado.innerHTML = `
+          <h2>Clima en ${data.name}, ${data.sys.country}</h2>
+          <p><strong>Descripción:</strong> ${data.weather[0].description}</p>
+          <p><strong>Temperatura:</strong> ${tempC} °C</p>
+          <p><strong>Sensación térmica:</strong> ${feelsLikeC} °C</p>
+          <p><strong>Humedad:</strong> ${data.main.humidity}%</p>
+          <p><strong>Viento:</strong> ${data.wind.speed} m/s</p>
+          <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Icono del clima">
+        `;
+      } catch (error) {
+        resultado.textContent = `Error: ${error.message}`;
       }
     }
   </script>

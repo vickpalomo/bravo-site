@@ -2,17 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bravo Site</title>
-    <link>https://vickpalomo.github.io/bravo-site/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Bravo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://vickpalomo.github.io/bravo-site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chistes</title>
+      <link>http://localhost:1313/jokes/</link>
+      <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jokes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Clima</title>
+      <link>http://localhost:1313/weather/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/weather/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Interés Compuesto</title>
-      <link>https://vickpalomo.github.io/bravo-site/interes/</link>
+      <link>http://localhost:1313/interes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vickpalomo.github.io/bravo-site/interes/</guid>
+      <guid>http://localhost:1313/interes/</guid>
       <description></description>
     </item>
   </channel>
