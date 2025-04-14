@@ -6,8 +6,22 @@
     <description>Recent content on Bravo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://vickpalomo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chistes</title>
+      <link>https://vickpalomo.github.io/jokes/</link>
+      <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://vickpalomo.github.io/jokes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Clima</title>
+      <link>https://vickpalomo.github.io/weather/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vickpalomo.github.io/weather/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Interés Compuesto</title>
       <link>https://vickpalomo.github.io/interes/</link>
