@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bravo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>https://vickpalomo.github.io/</link>
     <description>Recent content on Bravo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vickpalomo.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chistes</title>
-      <link>http://localhost:1313/jokes/</link>
+      <link>https://vickpalomo.github.io/jokes/</link>
       <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jokes/</guid>
+      <guid>https://vickpalomo.github.io/jokes/</guid>
       <description></description>
     </item>
     <item>
       <title>Clima</title>
-      <link>http://localhost:1313/weather/</link>
+      <link>https://vickpalomo.github.io/weather/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/weather/</guid>
+      <guid>https://vickpalomo.github.io/weather/</guid>
       <description></description>
     </item>
     <item>
       <title>Interés Compuesto</title>
-      <link>http://localhost:1313/interes/</link>
+      <link>https://vickpalomo.github.io/interes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/interes/</guid>
+      <guid>https://vickpalomo.github.io/interes/</guid>
       <description></description>
     </item>
   </channel>

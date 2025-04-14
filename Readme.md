@@ -109,7 +109,7 @@ https://vickpalomo.github.io/bravo-site/
 
 ## 📸 Demo
 
-(Agrega aquí un enlace o captura si tienes)
+[Demo Bravo Site](https://vickpalomo.github.io/bravo-site/)
 
 ---
 
