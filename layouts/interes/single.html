@@ -1,0 +1,64 @@
+{{ define "main" }}
+<main class="pa3 pa4-ns w-100 w-80-ns center">
+  <h1>{{ .Title }}</h1>
+
+  <form onsubmit="calcular(event)">
+    <label>Principal:
+      <input type="number" id="capital" value="1000" required>
+    </label><br>
+    <label>Tasa (% anual):
+      <input type="number" id="tasa" value="5" required>
+    </label><br>
+    <label>Periodos:
+      <input type="number" id="periodos" value="3" required>
+    </label><br><br>
+    <button type="submit">Calcular</button>
+  </form>
+  
+  <div id="resultado" style="margin-top: 20px;">Ingresa los datos y haz clic en "Calcular"</div>
+
+  <script>
+    async function calcular(event) {
+      event.preventDefault();
+      
+      const capital = document.getElementById('capital').value;
+      const tasa = document.getElementById('tasa').value;
+      const periodos = document.getElementById('periodos').value;
+
+      const resultado = document.getElementById('resultado');
+      resultado.textContent = 'Calculando...';
+
+      const apiKey = "42IuTguij6KMv7KTV8MppveAkF6HGAC024d7Z4nKvNkMdKC7jSF3Aas0AitMvcqC";
+
+      const url = "https://api-bravo.onrender.com/api/v1/interests/calcular-intereses";
+
+      // Preparamos los datos a enviar en el cuerpo de la solicitud
+      const data = {
+        principal: Number(capital),
+        tasa_anual: Number(tasa)/100,
+        periodos: Number(periodos)
+      };
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "x-api-key": apiKey,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data) // Enviamos los datos en el cuerpo de la solicitud
+        });
+
+        if (!response.ok) {
+          throw new Error('No se pudo calcular el interes');
+        }
+
+        const result = await response.json();
+        resultado.innerHTML = `El interes es: ${result.monto_total }`;
+      } catch (err) {
+        resultado.textContent = 'Error: ' + err.message;
+      }
+    }
+  </script>
+</main>
+{{ end }}
